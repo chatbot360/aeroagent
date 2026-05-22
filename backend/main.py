@@ -82,6 +82,7 @@ async def process_aqi_response(url: str):
         )
         advice = ai_response.choices[0].message.content
     except Exception as e:
+        print(f"GROQ API ERROR: {e}", flush=True)
         advice = "Could not fetch AI advice. Please check your Groq API key in the .env file."
 
     return {
