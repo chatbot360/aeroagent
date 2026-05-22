@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rose & Gold Patisserie | Premium Indian Bakery</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- jsPDF for Invoice Generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <h2>Rose & Gold<span>.</span></h2>
+            <p>Boutique Patisserie & Dessert Bar</p>
+        </div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#reviews">Reviews</a>
+            <button id="cart-icon" class="cart-btn" onclick="toggleCart()">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span id="cart-count">0</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Artisanal Bakes &<br><span>Royal Desserts</span></h1>
+            <p>From luxurious cheesecakes to authentic Turkish Kunafa. Handcrafted in Delhi NCR with the finest ingredients and a touch of elegance.</p>
+            <button class="cta-btn" onclick="document.getElementById('menu').scrollIntoView({behavior: 'smooth'})">Explore Menu</button>
+        </div>
+        <div class="hero-image-overlay"></div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="products-section">
+        <div class="section-header">
+            <h2>Our Signature Offerings</h2>
+            <p>Select your favorite delights. Price scales automatically with weight/quantity.</p>
+        </div>
+        <div class="products-grid" id="products-grid">
+            <!-- Dynamically populated by app.js -->
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="reviews-section">
+        <div class="section-header">
+            <h2>Genuine Google Reviews</h2>
+            <p>Trusted by dessert lovers across Delhi NCR</p>
+            <div class="google-rating">
+                <h2>4.9</h2>
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <p>Based on 452 reviews</p>
+            </div>
+        </div>
+        
+        <div class="review-cards">
+            <div class="review-card">
+                <div class="reviewer">
+                    <div class="avatar">A</div>
+                    <div>
+                        <h4>Aarti Sharma</h4>
+                        <span class="date">2 weeks ago</span>
+                    </div>
+                </div>
+                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p>"The New York Cheesecake is absolutely heavenly! Best I've had in South Delhi. Ordered a 1kg cake for a birthday and it was polished off in minutes. Highly competitive pricing for such a premium taste."</p>
+            </div>
+            
+            <div class="review-card">
+                <div class="reviewer">
+                    <div class="avatar">V</div>
+                    <div>
+                        <h4>Vikram Mehta</h4>
+                        <span class="date">1 month ago</span>
+                    </div>
+                </div>
+                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p>"Their Kunafa took me right back to Dubai! Perfect crunch, melt-in-the-mouth cheese, and not overly sweet. The virtual AI assistant on the site made placing my bulk order so seamless."</p>
+            </div>
+            
+            <div class="review-card">
+                <div class="reviewer">
+                    <div class="avatar">S</div>
+                    <div>
+                        <h4>Sneha Kapoor</h4>
+                        <span class="date">3 months ago</span>
+                    </div>
+                </div>
+                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
+                <p>"Bought the soft strawberry cupcakes for a baby shower. Not only did they look incredibly beautiful (perfect pastel theme), they tasted phenomenal. Just wow."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Rose & Gold Patisserie</h3>
+                <p>Serving world-class desserts with passion.</p>
+                <p>Delhi NCR, India</p>
+            </div>
+            <div class="footer-links">
+                Contact: hello@rosegoldbakes.in<br>
+                Phone: +91 98765 43210
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Rose & Gold Patisserie. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Overlay -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button onclick="toggleCart()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Dynamically populated by app.js -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price">₹0</span>
+            </div>
+            <button class="checkout-btn" onclick="openCheckoutModal()">Checkout securely</button>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal" id="checkout-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-lock"></i> Secure Checkout</h3>
+                <button onclick="closeCheckoutModal()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <form id="checkout-form">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" id="cust-name" required placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" id="cust-email" required placeholder="For invoice copy">
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" id="cust-phone" required placeholder="For delivery updates">
+                    </div>
+                    <div class="form-group">
+                        <label>Delivery Address</label>
+                        <textarea id="cust-address" required placeholder="Complete Delhi NCR Address"></textarea>
+                    </div>
+                    
+                    <div class="form-summary">
+                        <p>Total to Pay: <strong id="checkout-total-display">₹0</strong></p>
+                        <p class="n8n-notice"><i class="fa-solid fa-bolt"></i> Order processed securely via n8n Automation</p>
+                    </div>
+
+                    <button type="submit" class="pay-btn" id="pay-btn">
+                        <span>Place Order & Download Bill</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </form>
+            </div>
+            
+            <div class="success-message" id="success-message" style="display: none;">
+                <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
+                <h3>Order Confirmed!</h3>
+                <p>Your payment was successful. We've notified our kitchen.</p>
+                <div class="automation-logs">
+                    <p><i class="fa-solid fa-check"></i> Connected to n8n Webhook</p>
+                    <p><i class="fa-solid fa-check"></i> Email notification sent to customer</p>
+                    <p><i class="fa-solid fa-check"></i> SMS update dispatched</p>
+                    <p><i class="fa-solid fa-check"></i> PDF Invoice Generated (check downloads)</p>
+                </div>
+                <button class="close-btn" onclick="clearAndClose()">Back to Home</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Chatbot UI (Bakery.AI) -->
+    <div class="ai-chat-container">
+        <!-- Floating Chat Icon -->
+        <div class="chat-toggle-btn" id="chat-toggle-btn" onclick="toggleAIChat()">
+            <div class="ai-avatar">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+            <span class="ai-badge">Ask AI</span>
+        </div>
+
+        <!-- Chat Window -->
+        <div class="ai-chat-window" id="ai-chat-window">
+            <div class="chat-header">
+                <div class="chat-header-info">
+                    <div class="ai-avatar-small"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                    <div>
+                        <h4>Bakery.AI</h4>
+                        <p>Virtual Patisserie Concierge</p>
+                    </div>
+                </div>
+                <button class="close-chat" onclick="toggleAIChat()"><i class="fa-solid fa-chevron-down"></i></button>
+            </div>
+            <div class="chat-body" id="chat-body">
+                <!-- Chat messages go here -->
+                <div class="message ai-msg">
+                    <div class="msg-content">
+                        Hello! I'm Bakery.AI. 🌸<br><br>
+                        Whether you need guidance picking the perfect cake, want to track your recent order, or have an issue that needs a refund—I'm here to assist you instantly. How can I delight you today?
+                    </div>
+                </div>
+                <div class="quick-replies">
+                    <button onclick="aiPreFilledMsg('What are your bestsellers?')">👑 Bestsellers</button>
+                    <button onclick="aiPreFilledMsg('I need to track my order')">📦 Track Order</button>
+                    <button onclick="aiPreFilledMsg('How does your refund policy work?')">🔄 Refund info</button>
+                </div>
+            </div>
+            <div class="chat-footer">
+                <input type="text" id="ai-chat-input" placeholder="Ask anything..." onkeypress="handleAIPress(event)">
+                <button onclick="sendAIMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

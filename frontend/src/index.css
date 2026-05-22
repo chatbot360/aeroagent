@@ -1,0 +1,133 @@
+@import 'leaflet/dist/leaflet.css';
+:root {
+  font-family: 'Outfit', sans-serif;
+  color-scheme: dark;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  width: 100vw;
+  background-color: #000000;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Glowing Aurora Orbs */
+.orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(120px);
+  z-index: -1;
+  opacity: 0.5;
+  animation: float 20s infinite ease-in-out alternate;
+}
+.orb-1 {
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(99,102,241,0.6) 0%, rgba(0,0,0,0) 70%);
+  top: -200px; left: -100px;
+}
+.orb-2 {
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(0,229,255,0.4) 0%, rgba(0,0,0,0) 70%);
+  bottom: -200px; right: -200px;
+  animation-delay: -5s;
+}
+
+@keyframes float {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(100px, 150px) scale(1.1); }
+}
+
+/* True Bento Box Glassmorphism */
+.bento-card {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 32px;
+  padding: 40px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.4s;
+}
+.bento-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Form Inputs */
+.input-field {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 18px 24px;
+  color: white;
+  font-size: 1.2rem;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 400;
+  margin-top: 12px;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
+}
+.input-field:focus {
+  border-color: #00E5FF;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.5), 0 0 15px rgba(0, 229, 255, 0.2);
+}
+
+.neon-label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 800;
+  color: #71717a;
+}
+
+/* Striking Action Buttons */
+.action-btn {
+  background: #ffffff;
+  color: #000000;
+  border: none;
+  padding: 18px 40px;
+  border-radius: 100px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  width: 100%;
+  box-shadow: 0 10px 25px rgba(255,255,255,0.15);
+}
+.action-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 35px rgba(255,255,255,0.3);
+  background: #00E5FF;
+}
+
+/* Animations */
+.fade-up {
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+  transform: translateY(30px);
+}
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.title-glow {
+  font-weight: 900;
+  font-size: 4.5rem;
+  letter-spacing: -2.5px;
+  background: linear-gradient(to right, #ffffff, #71717a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+}

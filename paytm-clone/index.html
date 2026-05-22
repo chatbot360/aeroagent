@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paytm: Secure & Fast UPI Payments, Recharge Mobile & Pay Bills</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+    <!-- Desktop Global Navigation -->
+    <nav class="global-desktop-nav">
+        <div class="nav-container">
+            <div class="nav-left">
+                <!-- Styled Paytm Logo -->
+                <div style="display: flex; align-items: center; gap: 5px; cursor: pointer;">
+                    <img src="https://pwebassets.paytm.com/commonwebassets/paytmweb/header/images/logo.svg" alt="Paytm" style="height: 35px;">
+                    <span style="font-size: 18px;" class="heartbeat-anim">❤️</span>
+                    <strong style="font-style: italic; font-size: 24px; color: #002970; font-family: sans-serif; padding-left: 2px;">UPI</strong>
+                </div>
+            </div>
+            <div class="nav-links">
+                <a href="#recharge-section" class="nav-item">Paytm for Consumer</a>
+                <a href="#business-section" class="nav-item">Paytm For Business</a>
+                <a href="#" class="nav-item">Investor Relations</a>
+                <a href="#" class="nav-item">Company</a>
+                <a href="#" class="nav-item">Career</a>
+            </div>
+            <div class="nav-right">
+                <button class="sign-in-btn">
+                    <span>Sign In</span>
+                    <img src="https://pwebassets.paytm.com/commonwebassets/paytmweb/header/images/logoutImg.svg" alt="Profile" style="margin-left: 8px;">
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-tagline">
+                    <img src="https://pwebassets.paytm.com/commonwebassets/paytmweb/header/images/logo.svg" alt="Paytm" width="80" style="margin-bottom: 20px;">
+                    <h1>India's Most-loved Payments App</h1>
+                    <p>Recharge & pay bills, book flights & movie tickets, open a savings account, invest in stocks & mutual funds, and do a lot more.</p>
+                    <button class="download-app-btn">Download Paytm App <i class="fab fa-apple"></i> <i class="fab fa-android"></i></button>
+                    <div class="brand-trust-badges"></div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://assetscdn1.paytm.com/images/catalog/view_item/850762/1715933355520.png" alt="Paytm Interface on Phone">
+            </div>
+        </div>
+    </header>
+
+    <!-- Recharge & Bills Section -->
+    <section id="recharge-section" class="mega-section light-blue-bg">
+        <div class="mega-container">
+            <h2 class="section-title">Recharge & Pay Bills on Paytm.</h2>
+            <div class="mega-grid">
+                <div class="grid-card" onclick="openPaymentMock('Scan QR Code')">
+                    <i class="fas fa-qrcode box-icon"></i>
+                    <h4>Scan QR Code</h4>
+                </div>
+                <div class="grid-card" onclick="openPaymentMock('Pay Mobile Number')">
+                    <i class="fas fa-address-book box-icon"></i>
+                    <h4>Pay Mobile Number</h4>
+                </div>
+                <div class="grid-card">
+                    <i class="fas fa-mobile-alt box-icon"></i>
+                    <h4>Recharge Prepaid Mobile</h4>
+                </div>
+                <div class="grid-card">
+                    <i class="fas fa-lightbulb box-icon"></i>
+                    <h4>Pay Electricity Bill</h4>
+                </div>
+                <div class="grid-card">
+                    <i class="fas fa-satellite-dish box-icon"></i>
+                    <h4>Recharge DTH Connection</h4>
+                </div>
+                <div class="grid-card">
+                    <i class="fas fa-gas-pump box-icon"></i>
+                    <h4>Book Gas Cylinder</h4>
+                </div>
+                <div class="grid-card">
+                    <i class="fas fa-wifi box-icon"></i>
+                    <h4>Pay Broadband & Landline Bill</h4>
+                </div>
+                <div class="grid-card">
+                    <i class="fas fa-graduation-cap box-icon"></i>
+                    <h4>Pay Education Fee</h4>
+                </div>
+                <div class="grid-card">
+                    <i class="fas fa-chevron-circle-right box-icon"></i>
+                    <h4>All Payment Services</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book & Buy on Paytm Section -->
+    <section id="tickets-section" class="mega-section dark-blue-bg text-white">
+        <div class="mega-container">
+            <h2 class="section-title text-white">Book & Buy on Paytm.</h2>
+            <div class="mega-grid gap-large">
+                <div class="grid-card dark-mode-card">
+                    <i class="fas fa-plane box-icon" style="color:#00baf2;"></i>
+                    <h4>Flight Tickets</h4>
+                </div>
+                <div class="grid-card dark-mode-card">
+                    <i class="fas fa-bus box-icon" style="color:#00baf2;"></i>
+                    <h4>Bus Tickets</h4>
+                </div>
+                <div class="grid-card dark-mode-card">
+                    <i class="fas fa-train box-icon" style="color:#00baf2;"></i>
+                    <h4>Train Tickets</h4>
+                </div>
+                <div class="grid-card dark-mode-card">
+                    <i class="fas fa-film box-icon" style="color:#00baf2;"></i>
+                    <h4>Movie Tickets</h4>
+                </div>
+                <div class="grid-card dark-mode-card">
+                    <i class="fas fa-ticket-alt box-icon" style="color:#00baf2;"></i>
+                    <h4>Event Tickets</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Paytm Payment Instruments Section -->
+    <section class="mega-section white-bg">
+        <div class="mega-container padding-vertical">
+            <h2 class="section-title big-title">Paytm Payment Instruments</h2>
+            
+            <div class="instrument-box">
+                <div class="instrument-left">
+                    <img src="https://assetscdn1.paytm.com/images/catalog/view/307185/1617861564011.png" alt="Wallet Logo" style="width: 80px; margin-bottom: 20px;">
+                    <h3>The Fastest Way to Pay In-store & Online.</h3>
+                    <p>Load up your Paytm Wallet for lightning-fast, zero-failure payments at millions of stores and websites. It's safe, instant, and incredibly reliable.</p>
+                    <button class="black-download-btn">Download the App</button>
+                </div>
+                <div class="instrument-right">
+                    <img src="https://assetscdn1.paytm.com/images/catalog/view_item/850765/1626077030984.png" alt="Paytm Wallet Graphic" width="100%">
+                </div>
+            </div>
+
+            <div class="instrument-box reverse-layout">
+                <div class="instrument-left">
+                    <img src="https://assetscdn1.paytm.com/images/catalog/view/307186/1615957674521.png" alt="UPI Logo" style="width: 80px; margin-bottom: 20px;">
+                    <h3>Pay anyone directly from your bank account.</h3>
+                    <p>Pay anyone, everywhere. Make contactless & secure payments in-stores or online using Paytm UPI or directly from your Bank Account.</p>
+                    <button class="black-download-btn">Download the App</button>
+                </div>
+                <div class="instrument-right">
+                    <img src="https://assetscdn1.paytm.com/images/catalog/view_item/850764/1626077000254.png" alt="UPI Graphic" width="100%">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Section -->
+    <section id="business-section" class="mega-section grey-bg">
+        <div class="mega-container padding-vertical">
+            <h2 class="section-title big-title text-center">Business Services by Paytm</h2>
+            <div class="business-dashboard text-center">
+                <img src="https://assetscdn1.paytm.com/images/catalog/view_item/853874/1676359556209.png" alt="Paytm Soundbox" style="max-width: 400px; display:block; margin: 0 auto 30px;">
+                <h1>Accept payments with Paytm Soundbox.</h1>
+                <p style="font-size: 20px; color: #555;">Get instant audio confirmations for all your business transactions.</p>
+                <br><br>
+                <button class="nav-item" style="border:1px solid #00baf2; padding: 10px 20px; color:#00baf2; border-radius:30px; font-weight:600; cursor:pointer; background:none;">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==============================================
+         AI CHATBOT CONTAINER (ABSOLUTE FLOATING LAYER)
+         ============================================== -->
+    <div id="chatbot-container" class="chatbot-container">
+        
+        <!-- Minimized Floating Bubble -->
+        <div id="chatbot-minimized" class="chatbot-minimized" onclick="toggleChatbot()">
+            <img src="avatar.png" alt="Paytm.AI Avatar" class="avatar-minimized">
+            <div id="claim-tooltip" class="claim-tooltip hidden">You successfully completed a transaction! Claim your vouchers up to 50% Cashback here! ✨</div>
+        </div>
+
+        <!-- Refund Radar Floating Icon -->
+        <div id="refund-radar-minimized" class="refund-radar-minimized" onclick="handleRadarClick()">
+            <img src="avatar.png" alt="Refund Radar AI" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover; animation: avatarPremiumGlow 1.5s ease-in-out infinite; border: 2px solid white;">
+            <span class="radar-tooltip" id="radar-tooltip-text">Refund Radar</span>
+        </div>
+
+        <!-- Expanded Chatbot Window -->
+        <div class="chatbot-window">
+            <div class="chatbot-header" onclick="toggleChatbot()">
+                <div class="header-left">
+                    <button id="chat-back-btn" class="hidden" onclick="showQuickReplies(event)" style="color:#ffffff; font-size:20px; background:transparent; border:none; cursor:pointer; margin-right:15px; display:flex; align-items:center; opacity:1;"><i class="fas fa-arrow-left"></i></button>
+                    <div class="avatar-wrapper">
+                        <div class="avatar-aura"></div>
+                        <img src="avatar.png" alt="AI Agent" class="avatar-img">
+                    </div>
+                    <div class="header-info">
+                        <h3>Paytm.AI Support</h3>
+                        <span class="status">Always Online & Listening ✨</span>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <button class="close-btn"><i class="fas fa-chevron-down"></i></button>
+                </div>
+            </div>
+
+            <div class="chat-body" id="chat-messages">
+                <!-- Messages pushed dynamically via script.js -->
+            </div>
+
+            <div class="quick-replies hidden" id="quick-replies">
+                <button onclick="sendQuickReply('Lodge a complaint')">Lodge Complaint ⚠️</button>
+                <button onclick="sendQuickReply('Track my complaint')">Track Complaint 🔍</button>
+                <button onclick="sendQuickReply('Pay merchant via QR/Phone')">Pay via QR/Phone 📱</button>
+                <button onclick="sendQuickReply('Book Flight/Uber/Ola/Rapido/Train')">Book Travel/Ride ✈️🚕</button>
+                <button onclick="sendQuickReply('Order anything online')">Order Online 🍔</button>
+                <button onclick="sendQuickReply('What are the FAQs?')">General FAQs ❓</button>
+            </div>
+
+            <div class="chat-footer">
+                <div class="input-wrapper">
+                    <button id="features-toggle-btn" class="mic-btn toggle-btn" title="Toggle Features" onclick="toggleFeaturesMenu()" style="margin-right: 5px; color: #00baf2;">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <input type="text" id="chat-input" placeholder="Type or say 'Refund'...">
+                    <button id="mic-btn" class="mic-btn" title="Speak to Paytm AI">
+                        <i class="fas fa-microphone"></i>
+                    </button>
+                </div>
+                <button id="send-btn" class="send-btn" title="Send message">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+            
+            <!-- Accessibility Overlay when recording -->
+            <div id="listening-overlay" class="listening-overlay hidden">
+                <div class="listening-waves">
+                    <span></span><span></span><span></span><span></span>
+                </div>
+                <p>I am listening carefully...</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Payment Mockup Modal -->
+    <div id="payment-modal" class="payment-modal hidden">
+        <div class="payment-card" id="payment-card-content">
+            <h3 id="payment-title">Initializing...</h3>
+            
+            <!-- Dynamic payment input prompts -->
+            <div id="payment-input-area" class="hidden" style="margin-bottom: 20px; text-align: left;">
+                <input type="text" id="payment-number-input" placeholder="Enter 10-digit Phone No. or UPI ID" style="width:100%; padding: 12px; border-radius:8px; border:1px solid #ccc; font-size:16px; font-family:var(--font-stack);">
+                <button onclick="startPaymentProcess()" style="margin-top:15px; width:100%; background:var(--paytm-light-blue); color:white; padding:12px; border:none; border-radius:8px; cursor:pointer; font-weight:bold; font-size:16px;">Proceed to Pay</button>
+            </div>
+            
+            <div id="payment-scanner-area" class="hidden" style="margin-bottom: 20px;">
+                <div style="width:200px; height:200px; border:2px dashed var(--paytm-light-blue); border-radius:16px; margin: 0 auto 15px auto; display:flex; align-items:center; justify-content:center; background:#f9fbfb;">
+                    <i class="fas fa-camera" style="font-size:40px; color:#ccc;"></i>
+                </div>
+                <button onclick="startPaymentProcess()" style="width:100%; background:var(--paytm-light-blue); color:white; padding:12px; border:none; border-radius:8px; cursor:pointer; font-weight:bold; font-size:16px;">Simulate Scan Success</button>
+            </div>
+
+            <div class="payment-loader hidden" id="payment-loader"></div>
+            <p id="payment-status">Please wait...</p>
+            <button onclick="closePaymentMock()" class="close-payment-btn hidden" id="close-payment-btn">Done</button>
+        </div>
+    </div>
+
+    <!-- PDF Preview Modal -->
+    <div id="pdf-preview-modal" class="payment-modal hidden">
+        <div class="pdf-modal-container">
+            <div class="pdf-header">
+                <h3>Transaction Statement</h3>
+                <button onclick="closePDFModal()" class="close-pdf-btn"><i class="fas fa-times"></i></button>
+            </div>
+            <iframe id="pdf-iframe" class="pdf-iframe"></iframe>
+            <div class="pdf-footer">
+                <button onclick="downloadActivePDF()" class="black-download-btn"><i class="fas fa-download"></i> Download PDF</button>
+                <button onclick="printActivePDF()" class="nav-item" style="border:1px solid #0f4a8a; padding:10px 20px; border-radius:30px; margin-left:10px; cursor:pointer; background:none;">Print</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                if (targetId) {
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80, // Offset for fixed nav
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
