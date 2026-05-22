@@ -14,6 +14,9 @@ L.Icon.Default.mergeOptions({
   shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
 });
 
+// Deployment Environment Variable for API URL
+const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
+
 function MapUpdater({ geo }) {
   const map = useMap();
   useEffect(() => {
@@ -64,7 +67,7 @@ function App() {
     setChatLog([]);
     
     try {
-      const res = await fetch(`http://localhost:8000/api/analyze`, {
+      const res = await fetch(`${API_BASE_URL}/api/analyze`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ city: location })
@@ -77,7 +80,7 @@ function App() {
         setAdvice(data.detail || "Error finding city.");
       }
     } catch (err) {
-      setAdvice("Error connecting to Python backend. Is the FastAPI server running?");
+      setAdvice("Error connecting to Python backend.");
     }
     setLoading(false);
   };
@@ -95,7 +98,7 @@ function App() {
     
     navigator.geolocation.getCurrentPosition(async (position) => {
         try {
-            const res = await fetch(`http://localhost:8000/api/analyze-geo`, {
+            const res = await fetch(`${API_BASE_URL}/api/analyze-geo`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ 
@@ -142,12 +145,12 @@ function App() {
     setCompareLoading(true);
     
     try {
-      const p1 = fetch(`http://localhost:8000/api/analyze`, {
+      const p1 = fetch(`${API_BASE_URL}/api/analyze`, {
         method: "POST", headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ city: compareLoc1 })
       }).then(res => res.json());
 
-      const p2 = fetch(`http://localhost:8000/api/analyze`, {
+      const p2 = fetch(`${API_BASE_URL}/api/analyze`, {
         method: "POST", headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ city: compareLoc2 })
       }).then(res => res.json());
@@ -207,7 +210,7 @@ function App() {
     const systemPrompt = `You are an Autonomous Health Agent. Context: City: ${aqiData.city}, AQI: ${aqiData.aqi} (${aqiData.label}). Original advice given: ${advice}. You have access to a Wikipedia search tool. If the user asks for historical or general knowledge, use the tool. If not, answer directly and concisely.`;
   
     try {
-      const res = await fetch(`http://localhost:8000/api/chat`, {
+      const res = await fetch(`${API_BASE_URL}/api/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ 
