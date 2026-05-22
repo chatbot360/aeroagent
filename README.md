@@ -1,5 +1,7 @@
 # 🌍 AeroAgent: Autonomous Spatial & Air Quality LLM System
 
+### 🟢 [CLICK HERE TO VIEW LIVE PROJECT](https://aeroagent.vercel.app/)
+
 ## Project Overview
 AeroAgent is an enterprise-grade, full-stack application built to seamlessly fuse real-time environmental telemetry (Air Quality Index) with an **Agentic Generative AI backend**. This system not only provides spatial visualization and 7-day health forecasting, but it also features a native LLM Orchestration layer using Llama 3.3. 
 
